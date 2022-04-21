@@ -15,9 +15,9 @@ import com.ecar.apm.model.HttpSequenceLog;
 @Mapper
 public interface HttpSequenceLogMapper {
 
-	@Insert("INSERT INTO http_sequence_log(pguid,`status`,`costTime`,log"
+	@Insert("INSERT INTO http_sequence_log(pguid,`status`,`costTime`,`createTime`,log"
 			+ ")  VALUES("
-			+"#{httpSequenceLog.pguid},#{httpSequenceLog.status},#{httpSequenceLog.costTime},#{httpSequenceLog.log})")
+			+"#{httpSequenceLog.pguid},#{httpSequenceLog.status},#{httpSequenceLog.costTime},#{httpSequenceLog.createTime},#{httpSequenceLog.log})")
 	@Options(useGeneratedKeys = true, keyProperty = "httpSequenceLog.id", keyColumn = "id")
 	void insert(@Param("httpSequenceLog")HttpSequenceLog httpSequenceLog);
 	

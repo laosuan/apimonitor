@@ -14,10 +14,10 @@ import com.ecar.apm.model.HttpRequestLog;
 @Mapper
 public interface HttpRequestLogMapper {
 
-	@Insert("INSERT INTO http_request_log(pid,ppguid,pguid,`status`,`costTime`,`statusCode`,log"
+	@Insert("INSERT INTO http_request_log(pid,ppguid,pguid,`status`,`costTime`,`statusCode`,`createTime`,log"
 			+ ")  VALUES("
 			+"#{httpRequestLog.pid},#{httpRequestLog.ppguid},#{httpRequestLog.pguid},#{httpRequestLog.status},#{httpRequestLog.costTime},"
-			+ "#{httpRequestLog.statusCode},#{httpRequestLog.log})")
+			+ "#{httpRequestLog.statusCode},#{httpRequestLog.createTime},#{httpRequestLog.log})")
 	void insert(@Param("httpRequestLog")HttpRequestLog httpRequestLog);
 	
 	@Select("SELECT * FROM http_request_log")

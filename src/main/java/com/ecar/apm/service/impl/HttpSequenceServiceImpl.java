@@ -1,5 +1,6 @@
 package com.ecar.apm.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -45,6 +46,7 @@ public class HttpSequenceServiceImpl implements HttpSequenceService{
 		if(StringUtil.isEmpty(httpSequence.getGuid())){
 			httpSequence.setGuid(GuidGenerator.generate());
 		}
+		httpSequence.setCreateTime(new Date());
 		httpSequenceMapper.insert(httpSequence);
 	}
 	@Override
@@ -131,6 +133,7 @@ public class HttpSequenceServiceImpl implements HttpSequenceService{
 	
 	@Override
 	public void insertLog(HttpSequenceLog httpSequenceLog){
+		httpSequenceLog.setCreateTime(new Date());
 		httpSequenceLogMapper.insert(httpSequenceLog);
 	}
 	
